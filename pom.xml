@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.xianjinxia</groupId>
+	<artifactId>open-api</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>open-api</name>
+	<description>open-api for Spring Boot</description>
+
+	<parent>
+		<groupId>com.xianjinxia</groupId>
+		<artifactId>app-parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zuul</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.xianjinxia</groupId>
+			<artifactId>logcenter-sdk</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+
+		<!--apache commons -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.mapstruct</groupId>
+					<artifactId>mapstruct</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger-ui</artifactId>
+			</dependency>
+		<!-- unirest -->
+		<dependency>
+			<groupId>com.mashape.unirest</groupId>
+			<artifactId>unirest-java</artifactId>
+			<version>1.4.9</version>
+		</dependency>
+	</dependencies>
+
+
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<logback.root.path>/var/app/log/</logback.root.path>
+				<logback.loglevel>INFO</logback.loglevel>
+				<logback.output>CONSOLE</logback.output>
+				<spring.profile>dev</spring.profile>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+
+		<!--docker-->
+		<profile>
+			<id>docker1</id>
+			<properties>
+				<spring.profile>docker1</spring.profile>
+				<logback.root.path>/var/app/log/</logback.root.path>
+				<logback.loglevel>INFO</logback.loglevel>
+				<logback.output>CONSOLE</logback.output>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>docker2</id>
+			<properties>
+				<spring.profile>docker2</spring.profile>
+				<logback.root.path>/var/app/log/</logback.root.path>
+				<logback.loglevel>INFO</logback.loglevel>
+				<logback.output>CONSOLE</logback.output>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>docker3</id>
+			<properties>
+				<spring.profile>docker3</spring.profile>
+				<logback.root.path>/var/app/log/</logback.root.path>
+				<logback.loglevel>INFO</logback.loglevel>
+				<logback.output>CONSOLE</logback.output>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>docker4</id>
+			<properties>
+				<spring.profile>docker4</spring.profile>
+				<logback.root.path>/var/app/log/</logback.root.path>
+				<logback.loglevel>INFO</logback.loglevel>
+				<logback.output>CONSOLE</logback.output>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>docker5</id>
+			<properties>
+				<spring.profile>docker5</spring.profile>
+				<logback.root.path>/var/app/log/</logback.root.path>
+				<logback.loglevel>INFO</logback.loglevel>
+				<logback.output>CONSOLE</logback.output>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<profile>
+			<id>preprod</id>
+			<properties>
+				<logback.root.path>/var/loanark-api/log/</logback.root.path>
+				<logback.loglevel>INFO</logback.loglevel>
+				<spring.profile>preprod</spring.profile>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<profile>
+			<id>prod</id>
+			<properties>
+				<logback.root.path>/var/loanark-api/log/</logback.root.path>
+				<logback.loglevel>INFO</logback.loglevel>
+				<spring.profile>prod</spring.profile>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+	</profiles>
+
+
+	<build>
+		<finalName>${name}</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.xianjinxia.ApigatwayApplication</mainClass>
+					<executable>true</executable>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+	</build>
+
+
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<name>team nexus repository</name>
+			<url>http://nexus.xianjinxia.com:8081/nexus/content/groups/public/</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+</project>

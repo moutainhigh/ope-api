@@ -1,0 +1,49 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration will be overriden by the Spring profile you use,
+# for example application-dev.yml if you use the "dev" profile.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+server:
+  port: 8080
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: 121.43.172.116
+    non-secure-port-enabled: true
+    non-secure-port: 9005
+    instance-id: ${eureka.instance.ip-address}:${eureka.instance.non-secure-port}
+
+ext:
+    face:
+       apiKey: lv_t_tVha65Y6a47O5e4Y-X82k5zCNj9
+       apiSecret: oxjwYgZXnYtZAlIMdJdDD3zZcqfr-8xE
+
+    riskAddress:
+       pushUrl: http://apigateway.c2580c64562774723a2e4a3d930cfe27b.cn-shanghai.alicontainer.com
+       userName: rc_xjx_application_pre
+       password: xjx_rc_pre
+
+    authorization:
+       userName: xjx_test
+       password: xjx_test
+
+    oldCashmanServerAddressConfig:
+       serverAddress: 120.55.44.90:9000
+
+    soouu:
+         url: http://test.ccapi.soouu.cn/Interface/Method
+         customerId: 803708
+         sign: E10ADC3949BA59ABBE56E057F20F883E
+         
+    souKaConfig:
+        secretKey: 4CD893A7261B7F8B52CA6E5841DFACD0
+

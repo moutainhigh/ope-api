@@ -1,0 +1,41 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration will be overriden by the Spring profile you use,
+# for example application-dev.yml if you use the "dev" profile.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+#spring:
+#  profiles:
+#    active: @spring-package-profile@
+
+server:
+  port: 8080
+
+    
+ext:
+  riskAddress:
+     pushUrl: https://api.rm.koudailc.com
+     userName: rc_xjx_application_prod
+     password: xjx_rc_prod
+
+
+  authorization:
+     userName: xjx_application
+     password: xjx@DEFK
+
+  oldCashmanServerAddressConfig:
+     serverAddress: http://super.xianjinxia.com
+  soouu:
+     url: http://ccapi.soouu.cn/Interface/Method
+     customerId: 804011
+     sign: 270A3F10182A0F94F0B6FA50327E06C6
+
+
+  souKaConfig:
+     secretKey: 4CD893A7261B7F8B52CA6E5841DFACD0

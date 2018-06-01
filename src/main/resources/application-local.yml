@@ -1,0 +1,30 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration will be overriden by the Spring profile you use,
+# for example application-dev.yml if you use the "dev" profile.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+server:
+  port: 8080
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
+ext:
+  riskAddress:
+     pushUrl: http://apigateway.cd885b3c299fd4c539f7f6af0e0418635.cn-hangzhou.alicontainer.com
+     userName: xjx_application_client_test
+     password: xjx_test
+  soouu:
+     url: http://test.ccapi.soouu.cn/Interface/Method
+     customerId: 803683
+     sign: CC11F561EBF14204089A5C64DE61C8DF
